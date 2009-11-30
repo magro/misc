@@ -1,0 +1,1 @@
+This project is used to demonstrate an issue with the testing of wicket ajax drop downs: if there are two drop downs with the first one updating the available choices of the second one, the selected values are not available after the related form is submitted using WicketTester.
