@@ -4,7 +4,7 @@
 	<groupId>de.javakaffee.misc</groupId>
 	<artifactId>wicket-tester-drop-downs</artifactId>
 	<packaging>war</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>wicket-tester-drop-downs</name>
 	<description></description>
 	<licenses>
