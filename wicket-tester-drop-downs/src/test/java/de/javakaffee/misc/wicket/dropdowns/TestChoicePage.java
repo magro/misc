@@ -52,7 +52,7 @@ public class TestChoicePage {
         // select model
         formTester.select( "models", 1 );
 
-        formTester.submit( "submit" );
+        _tester.newFormTester( "form", false ).submit( "submit" );
 
         // this fails with AssertionFailedError: expected:<ChoicePage> but was:<HomePage>
         _tester.assertRenderedPage( ChoicePage.class );
