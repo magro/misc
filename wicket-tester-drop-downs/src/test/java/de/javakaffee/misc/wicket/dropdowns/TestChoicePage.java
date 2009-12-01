@@ -72,8 +72,7 @@ public class TestChoicePage {
 
         final Object selectedMakeAfterSubmit = _tester.getComponentFromLastRenderedPage( "form:makes" ).getDefaultModelObject();
         Assert.assertEquals( make, selectedMakeAfterSubmit );
-
-        // this fails with AssertionFailedError: expected:<ESCAPE> but was:<null>
+        
         final Object selectedModelAfterSubmit = _tester.getComponentFromLastRenderedPage( "form:models" ).getDefaultModelObject();
         Assert.assertEquals( model, selectedModelAfterSubmit );
         
