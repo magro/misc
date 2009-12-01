@@ -60,7 +60,7 @@ public class TestChoicePage {
         // select model
         final int modelIdx = 1;
         final String model = getChoice( modelIdx, "form:models" );
-        formTester.select( "models", modelIdx );
+        _tester.newFormTester( "form", false ).select( "models", modelIdx );
 
         _tester.newFormTester( "form", false ).submit( "submit" );
 
