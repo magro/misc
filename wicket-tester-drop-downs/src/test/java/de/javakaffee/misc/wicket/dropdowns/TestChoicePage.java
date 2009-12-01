@@ -16,6 +16,9 @@
  */
 package de.javakaffee.misc.wicket.dropdowns;
 
+import junit.framework.Assert;
+
+import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.util.tester.FormTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.testng.annotations.BeforeMethod;
@@ -34,6 +37,7 @@ public class TestChoicePage {
         _tester = new WicketTester( new WicketApplication() );
     }
 
+    @SuppressWarnings( "unchecked" )
     @Test
     public void testSubmitChoice() {
 
@@ -45,18 +49,38 @@ public class TestChoicePage {
 
         final FormTester formTester = _tester.newFormTester( "form", false );
 
-        // select make
-        formTester.select( "makes", 1 );
+        final int makeIdx = 1;
+        final String make = getChoice( makeIdx, "form:makes" );
+        formTester.select( "makes", makeIdx );
         _tester.executeAjaxEvent( "form:makes", "onchange" );
 
+        final Object selectedMake = ( (DropDownChoice<String>) _tester.getComponentFromLastRenderedPage( "form:makes" ) ).getDefaultModelObject();
+        Assert.assertEquals( make, selectedMake );
+
         // select model
-        formTester.select( "models", 1 );
+        final int modelIdx = 1;
+        final String model = getChoice( modelIdx, "form:models" );
+        formTester.select( "models", modelIdx );
 
         _tester.newFormTester( "form", false ).submit( "submit" );
 
-        // this fails with AssertionFailedError: expected:<ChoicePage> but was:<HomePage>
         _tester.assertRenderedPage( ChoicePage.class );
 
+        final Object selectedMakeAfterSubmit = _tester.getComponentFromLastRenderedPage( "form:makes" ).getDefaultModelObject();
+        Assert.assertEquals( make, selectedMakeAfterSubmit );
+
+        // this fails with AssertionFailedError: expected:<ESCAPE> but was:<null>
+        final Object selectedModelAfterSubmit = _tester.getComponentFromLastRenderedPage( "form:models" ).getDefaultModelObject();
+        Assert.assertEquals( model, selectedModelAfterSubmit );
+        
+
+    }
+
+    @SuppressWarnings( "unchecked" )
+    private <T> T getChoice( final int idx, final String path ) {
+        final DropDownChoice<T> makesDD =
+                (DropDownChoice<T>) _tester.getComponentFromLastRenderedPage( path );
+        return makesDD.getChoices().get( idx );
     }
 
 }
