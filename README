@@ -1,1 +1,4 @@
 Repo for miscellenious stuff, might also be called sandbox, workspace or playground.
+
+Index:
+* wicket-tester-drop-downs: A project that shall show a possible bug when a form is submitted after a dropdown triggered an ajax request via onchange - the response page is the home/index page but not the original/expected one
