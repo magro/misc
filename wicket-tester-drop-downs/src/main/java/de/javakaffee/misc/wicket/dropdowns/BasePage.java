@@ -15,7 +15,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 
 /**
- * @author Martin Grotzke (martin.grotzke@freiheit.com) (initial creation)
+ * <a href="mailto:martin.grotzke@javakaffee.de">Martin Grotzke</a>
  */
 public class BasePage extends WebPage {
     /**

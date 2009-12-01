@@ -39,7 +39,8 @@ import org.apache.wicket.model.PropertyModel;
  * <a href="mailto:martin.grotzke@javakaffee.de">Martin Grotzke</a>
  */
 public class ChoicePage extends BasePage {
-    private String selectedMake;
+    
+    private String _selectedMake;
 
     private final Map<String, List<String>> modelsMap = new HashMap<String, List<String>>(); // map:company->model
 
@@ -47,7 +48,7 @@ public class ChoicePage extends BasePage {
      * @return Currently selected make
      */
     public String getSelectedMake() {
-        return selectedMake;
+        return _selectedMake;
     }
 
     /**
@@ -55,7 +56,7 @@ public class ChoicePage extends BasePage {
      *            The make that is currently selected
      */
     public void setSelectedMake( String selectedMake ) {
-        this.selectedMake = selectedMake;
+        _selectedMake = selectedMake;
     }
 
     /**
@@ -85,7 +86,7 @@ public class ChoicePage extends BasePage {
 
             @Override
             public List<String> getObject() {
-                List<String> models = modelsMap.get( selectedMake );
+                List<String> models = modelsMap.get( _selectedMake );
                 if ( models == null ) {
                     models = Collections.emptyList();
                 }

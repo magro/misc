@@ -25,7 +25,7 @@ import org.apache.wicket.settings.IExceptionSettings.UnexpectedExceptionDisplay;
  * Application object for your web application. If you want to run this
  * application without deploying, run the Start class.
  * 
- * @see de.javakaffee.misc.Start#main(String[])
+ * @see de.javakaffee.misc.wicket.dropdowns.Start#main(String[])
  */
 public class WicketApplication extends WebApplication {
     /**
