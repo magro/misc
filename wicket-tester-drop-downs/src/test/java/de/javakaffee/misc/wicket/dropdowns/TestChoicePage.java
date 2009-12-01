@@ -22,20 +22,21 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
- * Simple test using the WicketTester
+ * Test using the WicketTester, {@link #testSubmitChoice()} fails as HomePage is
+ * returned after the form is submitted.
  */
 public class TestChoicePage {
-    
+
     private WicketTester _tester;
 
     @BeforeMethod
     public void setUp() {
         _tester = new WicketTester( new WicketApplication() );
     }
-    
+
     @Test
     public void testSubmitChoice() {
-        
+
         // start and render the test page
         _tester.startPage( ChoicePage.class );
 
@@ -47,15 +48,15 @@ public class TestChoicePage {
         // select make
         formTester.select( "makes", 1 );
         _tester.executeAjaxEvent( "form:makes", "onchange" );
-        
+
         // select model
         formTester.select( "models", 1 );
 
         formTester.submit( "submit" );
-        
+
         // this fails with AssertionFailedError: expected:<ChoicePage> but was:<HomePage>
         _tester.assertRenderedPage( ChoicePage.class );
-        
+
     }
 
 }

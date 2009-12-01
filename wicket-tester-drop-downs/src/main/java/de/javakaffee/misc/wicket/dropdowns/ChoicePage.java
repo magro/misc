@@ -36,7 +36,7 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 
 /**
- * <a href="mailto:martin.grotzke@javakaffee.de">Martin Grotzke</a>
+ * Copied from http://www.wicket-library.com/wicket-examples/ajax/choice
  */
 public class ChoicePage extends BasePage {
     

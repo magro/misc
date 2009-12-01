@@ -22,8 +22,6 @@ import org.apache.wicket.markup.html.WebPage;
 
 /**
  * Homepage
- * 
- * <a href="mailto:martin.grotzke@javakaffee.de">Martin Grotzke</a>
  */
 public class HomePage extends WebPage {
 

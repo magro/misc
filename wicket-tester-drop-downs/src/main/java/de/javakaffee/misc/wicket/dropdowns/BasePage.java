@@ -14,9 +14,6 @@ package de.javakaffee.misc.wicket.dropdowns;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 
-/**
- * <a href="mailto:martin.grotzke@javakaffee.de">Martin Grotzke</a>
- */
 public class BasePage extends WebPage {
     /**
      * Constructor

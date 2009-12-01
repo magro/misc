@@ -19,7 +19,6 @@ package de.javakaffee.misc.wicket.dropdowns;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.target.coding.HybridUrlCodingStrategy;
 import org.apache.wicket.settings.IExceptionSettings;
-import org.apache.wicket.settings.IExceptionSettings.UnexpectedExceptionDisplay;
 
 /**
  * Application object for your web application. If you want to run this
