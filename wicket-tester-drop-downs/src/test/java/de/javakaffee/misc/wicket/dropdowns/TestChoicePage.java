@@ -47,22 +47,26 @@ public class TestChoicePage {
         // assert rendered page class
         _tester.assertRenderedPage( ChoicePage.class );
 
-        final FormTester formTester = _tester.newFormTester( "form", false );
+        // 1. select make
+        final FormTester formTester1 = _tester.newFormTester( "form", false );;
 
         final int makeIdx = 1;
         final String make = getChoice( makeIdx, "form:makes" );
-        formTester.select( "makes", makeIdx );
+        formTester1.select( "makes", makeIdx );
         _tester.executeAjaxEvent( "form:makes", "onchange" );
 
+        // check selected make
         final Object selectedMake = ( (DropDownChoice<String>) _tester.getComponentFromLastRenderedPage( "form:makes" ) ).getDefaultModelObject();
         Assert.assertEquals( make, selectedMake );
 
-        // select model
+        // 2. select model
+        final FormTester formTester2 = _tester.newFormTester( "form", false );
+        
         final int modelIdx = 1;
         final String model = getChoice( modelIdx, "form:models" );
-        _tester.newFormTester( "form", false ).select( "models", modelIdx );
+        formTester2.select( "models", modelIdx );
 
-        _tester.newFormTester( "form", false ).submit( "submit" );
+        formTester2.submit( "submit" );
 
         _tester.assertRenderedPage( ChoicePage.class );
 
