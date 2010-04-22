@@ -37,7 +37,7 @@ public class DetailsPage extends BasePage {
 
     private static final String PARAM_KEY = SingleParameterNoPathCodingStrategy.FIRST_PARAMETER_KEY;
     private static final String PARAM_VALUE_SUFFIX = ".html";
-    private static final String SERVLET_PATH_PATTERN_STRING = "/?[^/=?]*m(\\d)+(:?\\.html)?(/.*)?";
+    private static final String SERVLET_PATH_PATTERN_STRING = "/?[^/=?]*i(\\d)+(:?\\.html)?(/.*)?";
     private static final Pattern SERVLET_PATH_PATTERN = Pattern.compile( SERVLET_PATH_PATTERN_STRING );
 
     public static final SingleParameterNoPathCodingStrategy URL_CODING_STRATEGY =
@@ -92,7 +92,7 @@ public class DetailsPage extends BasePage {
         }
         final PageParameters params = new PageParameters();
         // see also SERVLET_PATH_PATTERN_STRING
-        params.put( PARAM_KEY, make + "-m" + id + PARAM_VALUE_SUFFIX );
+        params.put( PARAM_KEY, make + "-i" + id + PARAM_VALUE_SUFFIX );
         return params;
     }
 

@@ -1,5 +1,9 @@
 This project is used to demonstrate an issue with the testing of a page that uses a custom WebRequestCodingStrategy (using WicketTester). When the app is run in tomcat/jetty, it behaves as expected.
 
+First checkout the project with
+$ git clone git://github.com/magro/misc.git test
+$ cd test/wicket-tester-custom-coding-strategy
+
 Run application (works):
   - run
     $ mvn jetty:run
