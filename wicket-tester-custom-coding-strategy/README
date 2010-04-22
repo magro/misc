@@ -1,0 +1,16 @@
+This project is used to demonstrate an issue with the testing of a page that uses a custom WebRequestCodingStrategy (using WicketTester). When the app is run in tomcat/jetty, it behaves as expected.
+
+Run application (works):
+  - run
+    $ mvn jetty:run
+  - open your browser at
+    http://localhost:8080/wicket-tester-custom-coding-strategy/Cadillac-m1.html
+  - buy the Cadillac via submitting "Buy now!"
+  - the (stateless) form is submitted,
+    - the cadillac is added to the basket
+    - and is shown in the list of items after the redirect
+    - we're again at http://localhost:8080/wicket-tester-custom-coding-strategy/Cadillac-m1.html
+
+Run test (fails):
+  - run
+    $ mvn test -Dtest=TestDetailsPage

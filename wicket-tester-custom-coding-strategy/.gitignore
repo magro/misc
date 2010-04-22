@@ -1,0 +1,6 @@
+.classpath
+.project
+.settings/
+temp-testng-customsuite.xml
+target/
+test-output/
